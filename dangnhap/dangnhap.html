@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dang nhap - EduManager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="dangnhap.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="brand-panel">
+        <div class="brand-mark">EM</div>
+        <h1>EduManager</h1>
+        <p>Quan ly sinh vien, giang vien, diem so va lich hoc tren mot he thong tap trung.</p>
+        <div class="brand-stats">
+          <div><strong>8</strong><span>Phan he</span></div>
+          <div><strong>24/7</strong><span>Quan tri</span></div>
+        </div>
+      </section>
+
+      <section class="login-card">
+        <div class="login-head">
+          <div>
+            <h2>Dang nhap</h2>
+            <p>Su dung tai khoan quan tri cua he thong.</p>
+          </div>
+        </div>
+        <form id="loginForm" class="auth-form active" novalidate>
+          <div class="input-group">
+            <label for="username">Ten dang nhap</label>
+            <input type="text" id="username" autocomplete="username" minlength="3" maxlength="50" required placeholder="Vi du: admin" />
+          </div>
+          <div class="input-group">
+            <label for="password">Mat khau</label>
+            <input type="password" id="password" autocomplete="current-password" minlength="4" maxlength="255" required placeholder="Nhap mat khau" />
+          </div>
+          <button type="submit" class="btn-login" id="btnLogin">Dang nhap</button>
+          <button type="button" class="link-btn" id="showForgot">Quen mat khau?</button>
+          <div id="errorMessage" class="error-msg" role="alert"></div>
+        </form>
+        <form id="forgotForm" class="auth-form" novalidate>
+          <div class="input-group">
+            <label for="forgotUsername">Ten dang nhap</label>
+            <input type="text" id="forgotUsername" minlength="3" maxlength="50" required placeholder="Nhap ten dang nhap" />
+          </div>
+          <div class="input-group">
+            <label for="contact">Email hoac so dien thoai</label>
+            <input type="text" id="contact" required placeholder="Nhap dung email hoac SDT da dang ky" />
+          </div>
+          <button type="submit" class="btn-login" id="btnForgot">Lay lai mat khau</button>
+          <button type="button" class="link-btn" id="showLogin">Quay lai dang nhap</button>
+          <div id="forgotMessage" class="error-msg" role="alert"></div>
+        </form>
+      </section>
+    </main>
+    <script src="dangnhap.js"></script>
+  </body>
+</html>

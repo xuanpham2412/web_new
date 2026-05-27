@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1a3c6e;
+  --accent: #e8a020;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --border: #dce4ef;
+  --text: #0f172a;
+  --muted: #64748b;
+  --green: #16a34a;
+  --red: #ef4444;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.student-sidebar {
+  width: 260px;
+  background: var(--primary);
+  color: #fff;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.brand span {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.brand strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+
+.brand small {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+}
+
+.student-sidebar nav {
+  display: grid;
+  gap: 8px;
+}
+
+.student-sidebar a {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 12px;
+  color: rgba(255, 255, 255, 0.82);
+  background: transparent;
+  text-align: left;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.student-sidebar a.active,
+.student-sidebar a:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.student-footer {
+  margin-top: auto;
+}
+
+.student-user-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.student-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.student-user-meta {
+  min-width: 0;
+  flex: 1;
+}
+
+.student-user-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-user-role {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.student-logout {
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 10px;
+  background: var(--accent);
+  color: var(--primary);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.student-logout:hover {
+  filter: brightness(0.96);
+}
+
+.student-main {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
+  overflow: auto;
+}
+
+.student-topbar {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.student-topbar p,
+.gpa-box span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.student-topbar h1 {
+  font-size: 28px;
+}
+
+.gpa-box {
+  min-width: 132px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.gpa-box strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 28px;
+}
+
+.status-box,
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.status-box {
+  padding: 18px;
+  color: var(--muted);
+}
+
+.student-content {
+  display: grid;
+  gap: 18px;
+}
+
+.panel-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-head h2 {
+  font-size: 17px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px;
+}
+
+.info-item {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.info-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.info-item strong {
+  font-size: 14px;
+}
+
+.notice-list {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.student-notice {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fbfdff;
+}
+
+.student-notice-date {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.student-notice h3 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.student-notice p {
+  margin-top: 8px;
+  color: #334155;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.empty-note {
+  color: var(--muted);
+  padding: 8px 0;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 90px repeat(6, minmax(120px, 1fr));
+  overflow-x: auto;
+}
+
+.schedule-cell {
+  min-height: 86px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+  background: #fff;
+}
+
+.schedule-cell.head {
+  min-height: auto;
+  background: #f8fafc;
+  font-weight: 800;
+  color: #385273;
+}
+
+.lesson {
+  background: #eef5ff;
+  border-left: 3px solid #3b82f6;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.lesson strong,
+.lesson span {
+  display: block;
+}
+
+.lesson span {
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 13px;
+}
+
+th {
+  background: #f8fafc;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.pass {
+  color: var(--green);
+  font-weight: 800;
+}
+
+.fail {
+  color: var(--red);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  body {
+    display: block;
+  }
+
+  .student-sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .student-sidebar nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .student-sidebar button {
+    margin-top: 0;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .student-main {
+    padding: 16px;
+  }
+
+  .student-topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .student-sidebar nav {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

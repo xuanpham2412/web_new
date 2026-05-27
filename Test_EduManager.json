@@ -1,0 +1,96 @@
+{
+  "info": {
+    "_postman_id": "b1c2d3e4-f5a6-7890-1234-56789abcdef1",
+    "name": "Web Quản Lý Trường Học (API Test) - Update 2",
+    "description": "Kịch bản test API cho hệ thống quản lý trường học, bao gồm các endpoint đăng nhập, quản lý sinh viên và nhập điểm.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Đăng nhập thiếu thông tin",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"Username\": \"\",\n    \"Password\": \"\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "login"]
+        }
+      }
+    },
+    {
+      "name": "2. Đăng nhập sai mật khẩu",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"Username\": \"admin\",\n    \"Password\": \"matkhausai\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "login"]
+        }
+      }
+    },
+    {
+      "name": "3. Lấy danh sách Sinh Viên (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/sinhvien",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "sinhvien"]
+        }
+      }
+    },
+    {
+      "name": "4. Tìm kiếm Sinh viên (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/sinhvien?timkiem=Anh",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "sinhvien"],
+          "query": [
+            {
+              "key": "timkiem",
+              "value": "Anh",
+              "description": "Từ khóa tìm kiếm sinh viên"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. Giảng viên nhập điểm (POST)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"MaLop\": \"CNTT1\",\n    \"MaMH\": \"MH001\",\n    \"MaSV\": \"SV001\",\n    \"Diem\": 8.5\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/nhapdiem",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "nhapdiem"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}

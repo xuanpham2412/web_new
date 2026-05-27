@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduManager - Bang diem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="sinhvien.css" />
+  </head>
+  <body data-page="scores">
+    <aside class="student-sidebar" id="studentSidebar"></aside>
+    <main class="student-main">
+      <header class="student-topbar" id="studentTopbar"></header>
+      <section id="statusBox" class="status-box">Dang tai du lieu...</section>
+      <section id="appContent" class="student-content" hidden>
+        <section class="panel">
+          <div class="panel-head"><h2>Bang diem</h2></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Ma mon</th><th>Mon hoc</th><th>Giua ky</th><th>Cuoi ky</th><th>Tong</th><th>Xep loai</th></tr></thead>
+              <tbody id="scoreBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="sinhvien.js"></script>
+  </body>
+</html>
